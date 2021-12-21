@@ -20,7 +20,7 @@ Dataset is downloaded from [Kaggle](https://www.kaggle.com/uciml/iris).  Dataset
 | 4 | iris | 150 non-null | object
 
 <p align="center">
-    <img src="hist_iris.png"> 
+    <img width="400" height="500" src="hist_iris.png"> 
 </p>
 
 | Classes | Num of Variables |
