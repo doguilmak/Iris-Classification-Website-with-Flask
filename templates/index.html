@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full End-to-End Deployment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            font-size: 16px;
+            background-color: gray;
+        }
+
+        /** HEADER **/
+        .container {
+            background-color: #a200ff5e;
+            border-radius: 0;
+            border: 0;
+            color: #000000;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-radius: 5px;
+            height: 600px;
+        }
+
+        hr {
+            width: 50%;
+        }
+
+        input {
+            margin-top: 40px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 50%;
+        }
+
+        div {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+            opacity: 1;
+            transition: opacity 0.6s;
+            margin-bottom: 15px;
+        }
+
+        .alert.light {
+            background-color: white;
+            color: black;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: black;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type=text] {
+            width: 50%;
+            padding: 10px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+            border-radius: 5px;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #555;
+        }
+
+        small {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container" style="text-align: center;">
+            <h1>Predict Iris Class with K-NN</h1>
+            <hr>
+
+            <!-- Creating form -->
+            <form action="/" method="POST">
+                <input type="text" placeholder="Sepal Length" name="sepal_length_input"><br>
+                <input type="text" placeholder="Sepal Width" name="sepal_width_input"><br>
+                <input type="text" placeholder="Petal Length" name="petal_length_input"><br>
+                <input type="text" placeholder="Petal Width" name="petal_width_input"><br>
+                <small>*Metric unit of length and width should be as centimeter.</small><br>
+                <button type="submit" value="submit" class="btn btn-dark btn-lg">Predict</button>
+            </form>
+            {%if irisClass%}
+            <div class="alert light">
+                <span class="closebtn">&times;</span>
+                Predicted as <b>{{irisClass}}</b>
+            </div>
+            {%endif %}
+        </div>
+    </header>
+
+    <!-- jQuery (Bootstrap JS plugins depend on it) -->
+    <script>
+        var close = document.getElementsByClassName("closebtn");
+        var i;
+
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.opacity = "0";
+                setTimeout(function () { div.style.display = "none"; }, 600);
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
