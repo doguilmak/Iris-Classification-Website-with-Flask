@@ -28,7 +28,6 @@ Dataset is downloaded from [Kaggle](https://www.kaggle.com/uciml/iris).  Dataset
 | Iris-setosa  | 50 |
 | Iris-versicolor | 50 |
 | Iris-virginica | 50 |
-|  |  |   
 
 Name: iris, dtype: int64 
 
