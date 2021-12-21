@@ -7,5 +7,6 @@ In this project, a website was created that allows predictions on Iris data by u
     <img src="webpage_preview.png"> 
 </p>
 
+---
 
 Annotations will be added to the file...
