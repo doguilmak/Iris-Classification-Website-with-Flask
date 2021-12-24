@@ -84,6 +84,7 @@ After reaching this stage in a healthy way, a function was created to facilitate
 
 In order to establish a logical link between the interface and the function, the function that fulfills the following POST and GET requests has been created.
 
+    @app.route("/", methods = ['POST', 'GET'])
     def index():
         irisClass=''
         if request.method == 'POST' and 'sepal_length_input' in request.form and 'sepal_width_input' in request.form and 'petal_length_input' in request.form and 'petal_width_input' in request.form:
